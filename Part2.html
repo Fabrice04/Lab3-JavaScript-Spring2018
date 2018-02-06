@@ -1,0 +1,39 @@
+
+<!-- Inspired by  "how_wide_is_this_window.html" in the example repo-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 2</title>
+</head>
+
+<body>
+
+<div>
+    <p id="resolution"></p>
+
+</div>
+
+
+<script>
+
+    var screen_resolution = document.getElementById("resolution"); //width_para = document.getElementById("width");
+    var screen_width = window.innerWidth;
+    var screen_height = window.innerHeight;
+    screen_resolution.innerHTML = "Number of pixels = " + screen_width * screen_height;
+
+    // When the window is re-sized
+    window.addEventListener("resize", windowResize);
+
+    function windowResize() {
+        screen_resolution = document.getElementById("resolution");
+        screen_width = window.innerWidth;
+        screen_height = window.innerWidth;
+        screen_resolution.innerHTML = "Number of pixels = " + screen_width * screen_height;
+    }
+
+</script>
+
+</body>
+
+</html>

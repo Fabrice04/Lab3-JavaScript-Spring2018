@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 1a</title>
+</head>
+<body>
+
+<!-- My form w/ the input text box and the button-->
+<form>
+    <p>Type your text here:</p>
+    <input type="text" id="user-Text">
+    <button type="button" id="submit-button">Submit</button>
+</form>
+
+<!-- My empty unsorted list-->
+<div>
+
+    <ul id="my-List">
+
+    </ul>
+
+</div>
+
+<script>
+
+    document.getElementById('submit-button').addEventListener('click', addTextToList);
+
+    function addTextToList() {
+
+            var my_list_element = document.getElementById("my-List");
+
+            var new_list_item = document.createElement("li");
+
+            var text_item = document.getElementById("user-Text");
+
+            new_list_item.innerHTML = text_item.value;
+
+            my_list_element.appendChild(new_list_item);
+
+            text_item.value = "";
+
+        }
+
+
+</script>
+
+
+</body>
+</html>
