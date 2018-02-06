@@ -1,0 +1,54 @@
+<!-- I took the unicode.html as base for this exercise -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 3</title>
+</head>
+<body>
+
+<div>
+
+    <p>Star Wars, <span class="rating">4</span></p>
+
+    <p>Black panther (Marvel), <span class="rating">5</span></p>
+
+    <p>Star Trek, <span class="rating">3</span></p>
+
+    <p>TITANIC, <span class="rating">4</span></p>
+
+
+</div>
+
+<script>
+
+    //var myStars = "";
+    var whiteStar = "\u2606";
+    var blackStar = "\u2605";
+    var moviesRate = document.getElementsByClassName("rating");
+
+    //check every node with class name = rating
+    for (var i = 0 ; i < moviesRate.length ; i++){
+
+        var myStars = "";
+        // I get the rating (text in that node)
+        var rate = parseInt(moviesRate[i].textContent);
+
+        //I give the number of black star (equal the rating)
+        for (var j = 0 ; j < rate  ; j++){
+            myStars = myStars + blackStar;
+        }
+
+        // I fill up the gap to have a total of 5 stars
+        for (var x = (rate) ; x < 5 ; x++){
+            myStars = myStars + whiteStar;
+        }
+
+
+        moviesRate[i].innerHTML = myStars;
+    }
+
+
+</script>
+</body>
+</html>
